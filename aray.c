@@ -24,7 +24,7 @@ void insert(int pos, int val, int ARR[max])
 	}
 }       
 
-int check (int ARR[max]) 
+int check() 
 {
 	if(n == 0 && flagg == 0) {
 		return 1;
@@ -55,38 +55,49 @@ void display(int ARR[max])
 	}
 	printf("\n");
 }
-		 
+
+void refresh()
+{
+	write(STDOUT_FILENO, "\x1b[2J",4 );
+	write(STDOUT_FILENO, "\x1b[H",3);
+}
+	 
 int main()
 {
 	int *ARR = calloc(50,sizeof(int));
 	
 	int i,pos,val;
+	refresh();
+	printf("          WELCOME TO OUR PROGRAM\n");
 	while(1) {
-	write(STDOUT_FILENO, "\x1b[2J",4 );
-	write(STDOUT_FILENO, "\x1b[H",3);
-	printf("menu\n");
-	printf("ENTER 1 TO INSERT\n");
-	printf("Enter 2 To delete\n");
-	printf("ENTER 3 TO displaqy\n");
-	printf("Enter 4 To exit\n");
+	printf("          Please choose from available options:-\n");
+	printf("****************************************************\n");
+	printf("     ENTER 1 TO INSERT\n");
+	printf("     Enter 2 To delete\n");
+	printf("     ENTER 3 TO displaqy\n");
+	printf("     Enter 4 To exit\n");
 	scanf("%d",&i);
 	switch(i) {
 		case 1:
-				printf("Enter position and value to be inserted\n");
-				int flag = check(ARR);
+				printf("Enter position and value to be inserted :  ");				
+				int flag = check();
 				if(flag == 0 ){
 					printf("Array is full\n");
+					printf("Enter a character to continue :");
+					getchar(); getchar();
 					break;
 				}
 				scanf("%d %d",&pos,&val);
 				insert(pos,val,ARR);
 				break;
 		case 2:
-			printf("Enter position from which we need to perform deletion\n");
+			printf("Enter position from which we need to perform deletion: \n");
 			scanf("%d",&pos);
-			int flag1 = check(ARR);
+			int flag1 = check();
 			if(flag1 == 1) { 
 				printf("Array is empty\n");
+				printf("Enter a character to continue :");
+				getchar(); getchar();
 				break;
 			}
 			delete(pos,ARR);
@@ -94,12 +105,15 @@ int main()
 		case 3:
 			printf("Elements of arrays are as follows\n");
 			display(ARR);
+			printf("Enter a character to continue :");
+			getchar(); getchar();
 			break;
 		case 4:
 			printf("Thanks for using program\n");
 			return 0;
 			
 		}
+		refresh();
 	
 	}
 	return 0;
