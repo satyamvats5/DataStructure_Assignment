@@ -65,10 +65,10 @@ int main()
 	write(STDOUT_FILENO, "\x1b[2J",4 );
 	write(STDOUT_FILENO, "\x1b[H",3);
 	printf("menu\n");
-	printf("eNTER 1 TO INSERT\n");
-	printf("Enter 2 to delete\n");
-	printf("eNTER 3 TO displaqy\n");
-	printf("Enter 4 to exit\n");
+	printf("ENTER 1 TO INSERT\n");
+	printf("Enter 2 To delete\n");
+	printf("ENTER 3 TO displaqy\n");
+	printf("Enter 4 To exit\n");
 	scanf("%d",&i);
 	switch(i) {
 		case 1:
