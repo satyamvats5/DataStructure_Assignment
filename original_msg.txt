@@ -1,0 +1,95 @@
+Return-Path: <satyamvats5@gmail.com>
+Received: from prakash-aspire-5750.domain.name ([103.52.254.148])
+        by smtp.googlemail.com with ESMTPSA id b63sm21856407pga.27.2017.09.12.12.15.40
+        for <satyamvats5@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Tue, 12 Sep 2017 12:15:43 -0700 (PDT)
+From: SATYAM KUMAR <satyamvats5@gmail.com>
+X-Google-Original-From: SATYAM KUMAR <satyamvats5@gmailo.com>
+To: satyamvats5@gmail.com
+Subject: [PATCH] Lab_No_1: To merge two array into 3rd.
+Date: Wed, 13 Sep 2017 00:45:30 +0530
+Message-Id: <1505243730-11065-1-git-send-email-satyamvats5@gmailo.com>
+X-Mailer: git-send-email 2.7.4
+
+From: satyam <satyamvats5@gmail.com>
+
+We have been given two unsorted array.
+We need to merge these arrays into a third
+sorted array.
+
+Signed-off-by: satyam kumar<satyamvats5@gmail.com>
+---
+ 2.c | 60 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+ create mode 100644 2.c
+
+diff --git a/2.c b/2.c
+new file mode 100644
+index 0000000..35303db
+--- /dev/null
++++ b/2.c
+@@ -0,0 +1,60 @@
++#include <stdio.h>
++int main()
++{
++	int limit1, limit2, m, n, i = 0,j = 0, k, l;
++
++	printf("Enter the array limit for 1st array\n");
++	scanf("%d",&limit1);
++	int array1[limit1];
++
++	printf("Enter the elemets of 1st array:-\n");
++	for(m = 0; m < limit1; m++) {
++		scanf("%d",&array1[m]);
++	}
++	
++	printf("ENter the array limit for 2nd array\n");
++	scanf("%d",&limit2);
++	int array2[limit2];
++	
++	printf("Enter elements of 2nd array\n");
++	for(n = 0; n < limit2;n++) {
++		scanf("%d",&array2[n]);
++	}
++		
++	int array3[limit1 + limit2];
++	
++	for( k = 0; k < limit1 +  limit2; k++) {
++		if(j<limit2 && i < limit1) {
++			if(array1[i] > array2[j]) {
++				array3[k] = array2[j];
++				j++;
++				continue;
++			} else {
++				array3[k] = array1[i];
++				i++;
++				continue;
++			}
++		}
++
++		if((j == limit2) && (i < limit1)) {
++			array3[k] = array1[i];
++			i++;
++			continue;
++		}
++		
++		if((i == limit1) && (j < limit2)) {
++			array3[k] = array2[j];
++			j++;
++			continue;
++		}
++	}
++
++	for(i = 0; i < limit1 + limit2; i++) {
++		printf("%d ",array3[i]);
++	}
++	printf("\n");
++	
++	return 0;
++} 
++
++	
+-- 
+2.7.4
+
