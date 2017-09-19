@@ -72,6 +72,7 @@ int main()
 		switch(data) {
 		
 			case 1:
+				printf("ENter an element to be pushed into the stack:-\n");
 				scanf("%d",&val);		
 				push(ARR,val);
 				break;
