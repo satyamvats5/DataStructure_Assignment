@@ -12,3 +12,5 @@ int right(int);
 void maxHeapify(int A[],int,int);
 
 void buidMaxHeap(int A[],int);
+
+void swap(int *, int *);
