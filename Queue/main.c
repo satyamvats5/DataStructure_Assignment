@@ -11,7 +11,9 @@ int main()
 	int i;
 	while(1){
 		val = menu();
+		
 		switch(val) {
+		
 		
 			case 1:
 				if(!is_full()) {
@@ -31,8 +33,13 @@ int main()
 				}
 				break;
 			case 3:
-				printf("Elements of arrays are as follows :)\n");
-				display();
+				if(!is_empty()) {
+					printf("Elements of arrays are as follows :)\n");
+					display();
+				} else {
+					printf("The queue is empty :(\n");
+				}
+				
 				break;
 			default:
 				printf("Thanks for using program\n");

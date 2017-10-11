@@ -30,12 +30,15 @@ int delete()
 {
 	int temp = list.front;
 	list.front = list.front + 1;
+	if(list.front > list.rear) {
+		list.rear = list.front = -1;
+	}
 	return list.A[temp];
 }
 
 bool is_empty()
 {
-	return (list.front == list.rear ==  -1 || list.front > list.rear)? true: false;
+	return (list.front == -1 && list.rear ==  -1 )? true: false;
 } 
 
 bool is_full()
