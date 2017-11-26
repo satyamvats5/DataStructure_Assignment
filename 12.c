@@ -89,7 +89,7 @@ int main()	{
 	int n;
 	int choice;
 	do	{
-		printf("1)Insert at begining\n2)Insert at end\n3)Insert at any position\n4)Delete at beginging\n5)Delete at end\n6)Delete at any position\n7)Display\n8)Exit\n");
+		printf("1)Insert at begining\n2)Insert at end\n3)Insert at any position\n4)Delete at beginging\n5)Delete at end\n6)Delete at any position\n7)Display\n9)Exit\n");
 		scanf("%d",&choice);
 		switch(choice)
 		{
