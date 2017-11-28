@@ -18,10 +18,11 @@ int main()
 		printf("Enter the row number and column number respectively :- ");
 		scanf("%d %d", &rowpos,&colpos);
 	
-		unsigned int val1 = (unsigned int)ARR;    //Base Address of the array.
+		unsigned int val1 ;
 	
-		printf("base address = %u\n",val1); //Printing the base address.
-		printf("Address of your desird position in row order = ");
+		printf("Enter base address : "); 
+
+		scanf("%d",&val1);
 
 		int row_add, col_add;
 		row_add = val1 + (col * rowpos + colpos)*sizeof(int);    // Calculation of adress in row order.
